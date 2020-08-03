@@ -3,6 +3,7 @@ package com.bombaytone.androidvideo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
 
         VideoView vvMain = findViewById(R.id.vvMain);
         vvMain.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.sample);
+
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(vvMain);
+
+        vvMain.setMediaController(mediaController);
         vvMain.start();
     }
 }
