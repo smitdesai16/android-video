@@ -11,5 +11,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        VideoView vvMain = findViewById(R.id.vvMain);
+        vvMain.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.sample);
+        vvMain.start();
     }
 }
